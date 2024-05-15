@@ -23,4 +23,3 @@ To set up the development environment:
 3. Run `npm start` to start the development server.
 4. Make changes to the React app in the `src` directory.
 5. Run `npm run build` to build the production version of the app.
-

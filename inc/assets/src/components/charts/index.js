@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import apiFetch from '@wordpress/api-fetch';
 import {
 	LineChart,
 	Line,
@@ -9,6 +10,7 @@ import {
 	Legend,
 	ResponsiveContainer,
 } from 'recharts';
+const apiNonce = wpApiSettings.nonce;
 
 const Charts = () => {
 	const [ data, setData ] = useState( [] );
@@ -16,11 +18,19 @@ const Charts = () => {
 
 	useEffect( () => {
 		const fetchData = async () => {
-			const response = await fetch(
-				`/wp-json/rm-charts-widget/v1/data?filter=${ filter }`
-			);
-			const responseData = await response.json();
-			setData( responseData );
+			try {
+				const response = await apiFetch( {
+					path: `/rm-charts-widget/v1/data?filter=${ filter }`,
+					method: 'GET',
+					headers: {
+						'content-type': 'application/json',
+						'X-WP-Nonce': apiNonce,
+					},
+				} );
+				setData( response || [] );
+			} catch ( error ) {
+				throw new Error( error );
+			}
 		};
 		fetchData();
 	}, [ filter ] );
