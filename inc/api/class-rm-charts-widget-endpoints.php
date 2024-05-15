@@ -58,21 +58,21 @@ class RM_Charts_Widget_Endpoints {
 			'rm-charts-widget/v1',
 			'/data',
 			array(
-				'methods'  => \WP_REST_Server::READABLE,
-				'callback' => array( $this, 'get_data' ),
+				'methods'             => \WP_REST_Server::READABLE,
+				'callback'            => array( $this, 'get_data' ),
 				'permission_callback' => array( $this, 'get_item_permissions_check' ),
 			)
 		);
 	}
 
 	/**
-      * Check whether a given request has permission to read notes.
-      *
-      * @param  object $request WP_REST_Request Full details about the request.
-      * @return object|boolean
-      */
-	  public function get_item_permissions_check( $request ) {
- 
+	 * Check whether a given request has permission to read notes.
+	 *
+	 * @param  object $request WP_REST_Request Full details about the request.
+	 * @return object|boolean
+	 */
+	public function get_item_permissions_check( $request ) {
+
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return new \WP_Error(
 				'rt_chart_rest_cannot_access',
