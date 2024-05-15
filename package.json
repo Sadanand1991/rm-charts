@@ -1,0 +1,28 @@
+{
+  "name": "rm-charts-widget",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start --entry=./inc/assets/src --output-path=./inc/assets/build",
+    "build": "wp-scripts build --entry=./inc/assets/src --output-path=./inc/assets/build",
+    "pretty": "prettier --check .",
+    "pretty:fix": "prettier --write .",
+    "lint-js": "wp-scripts lint-js",
+    "lint-js:fix": "npm run pretty:fix && npm run lint-js -- --fix",
+    "lint-css": "wp-scripts lint-style --allow-empty-input",
+    "lint-css:fix": "npm run lint-css -- --fix"
+  },
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^9.3.0",
+    "@wordpress/prettier-config": "^1.1.1",
+    "@wordpress/scripts": "^27.4.0",
+    "prettier": "npm:wp-prettier@^2.8.5",
+    "wp-prettier": "^2.8.5"
+  },
+  "dependencies": {
+    "@wordpress/element": "^5.30.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.12.7"
+  }
+}

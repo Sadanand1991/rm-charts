@@ -1,0 +1,9 @@
+.rm-charts-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rm-charts-widget .rm-charts-widget-heading {
+  display: flex;
+  justify-content: flex-end;
+}
