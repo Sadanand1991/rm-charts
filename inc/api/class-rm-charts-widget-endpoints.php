@@ -93,6 +93,10 @@ class RM_Charts_Widget_Endpoints {
 		$filter = $request->get_param( 'filter' );
 		$data   = array();
 
+		// Retrieve the data from the options table.
+		$option_name = 'rm_charts_widget_data';
+		$all_data    = get_option( $option_name, array() );
+
 		// Define start and end dates based on the filter.
 		$end_date = gmdate( 'Y-m-d' );
 		switch ( $filter ) {
@@ -110,14 +114,11 @@ class RM_Charts_Widget_Endpoints {
 		}
 
 		// Generate sample data within the date range.
-		$current_date = $start_date;
-		while ( $current_date <= $end_date ) {
-			$value        = wp_rand( 100, 500 ); // Generate random value.
-			$data[]       = array(
-				'date'  => $current_date,
-				'value' => $value,
-			);
-			$current_date = gmdate( 'Y-m-d', strtotime( $current_date . ' +1 day' ) );
+		foreach ( $all_data as $record ) {
+			// Assuming each record is an associative array with 'date' and 'value' keys.
+			if ( $record['date'] >= $start_date ) {
+				$data[] = $record;
+			}
 		}
 
 		return rest_ensure_response( $data );
