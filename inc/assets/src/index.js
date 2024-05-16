@@ -1,7 +1,5 @@
-import { createRoot } from '@wordpress/element';
-import App from './app';
+import { createRoot } from "@wordpress/element";
+import App from "./app";
 
-const root = createRoot(
-	document.getElementById( 'rm-charts-widget-container' )
-);
-root.render( <App /> );
+const root = createRoot(document.getElementById("rm-charts-widget-container"));
+root.render(<App />);

@@ -1,11 +1,11 @@
-import React from 'react';
-import Charts from './components/charts';
+import React from "react";
+import Charts from "./components/charts";
 // Global Stylesheet
-import './style.scss';
+import "./style.scss";
 
 // Main App component
 const App = () => {
-	return <Charts />;
+  return <Charts />;
 };
 
 export default App;
