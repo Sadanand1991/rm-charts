@@ -1,6 +1,6 @@
 {
   "name": "sadanand1991/rm-charts",
-  "description": "Rank Math Charts widget",
+  "description": "RM Charts widget",
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.6",
     "phpcompatibility/php-compatibility": "^9.3",
