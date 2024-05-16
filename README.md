@@ -1,8 +1,10 @@
 # RM Charts Widget
 
 RM Charts Widget is a WordPress plugin that adds a custom dashboard widget with a Recharts graph. This widget allows users to visualize data fetched from the WordPress REST API with filters for 7 days, 15 days, and 1 month.
-# DEMO: https://drive.google.com/file/d/1W0tmzmN3yMjML5sdxreXdp88Wz3UA50q/view?usp=sharing
-# Database data:  https://github.com/Sadanand1991/rm-charts/blob/main/charts-data.json
+# DEMO: 
+https://drive.google.com/file/d/1W0tmzmN3yMjML5sdxreXdp88Wz3UA50q/view?usp=sharing
+# Database data:
+https://github.com/Sadanand1991/rm-charts/blob/main/charts-data.json
 
 ## Installation
 
