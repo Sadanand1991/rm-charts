@@ -2,7 +2,7 @@
 /**
  * Chart widget endpoints.
  *
- * @package {{package}}
+ * @package RM_CHARTS
  * @since 1.0.0
  */
 
